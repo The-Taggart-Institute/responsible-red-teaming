@@ -5,7 +5,7 @@ All code can be found at https://github.com/BishopFox/sliver/releases/tag/v1.5.2
 
 The course only uses the Linux and Windows servers. These two files are too large to commit into a GitHub repo and can be found at the course share drive:
 
-https://drive.google.com/drive/folders/1ZbAWuDrBkMiyCQUfJeugdPso9gbON_7e?usp=sharing
+https://drive.google.com/drive/folders/1iiLL4u2IEzN9eKcfxEcu_k1X5FUPyeAK?usp=sharing
 
 The password for the Sliver 7Z folder is `RRTonTTI`
 
