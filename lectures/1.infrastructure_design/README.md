@@ -7,5 +7,7 @@ The course only uses the Linux and Windows servers. These two files are too larg
 
 https://drive.google.com/drive/folders/1ZbAWuDrBkMiyCQUfJeugdPso9gbON_7e?usp=sharing
 
+The password for the Sliver 7Z folder is `RRTonTTI`
+
 The original source code and license for Sliver are also included in the share. Please review the license before using the Sliver software.
 
