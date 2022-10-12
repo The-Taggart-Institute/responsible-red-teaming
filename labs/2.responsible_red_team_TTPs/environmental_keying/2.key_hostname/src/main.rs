@@ -59,10 +59,11 @@ fn main() {
     // ];
 
 
-    //Check an individual env key
+    //Check an individual env key with a method similar to our username POC
     let key_check_result = check_env_keys(&hostname_check);
     
     // OR... iterate through a vector of EnvCheck enums and return true ONLY if all checks pass
+    // This even works if there's only one single env check, so you can use this method in place of the code on line 53
     // let key_check_result:  bool = all_env_checks
     //     .iter()
     //     .all(|env_check| check_env_keys(env_check));
