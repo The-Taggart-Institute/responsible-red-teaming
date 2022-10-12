@@ -10,7 +10,7 @@ fn payload() {
 }
 
 fn check_env_keys() -> bool {
-    println!("Checking keys...");
+    println!("[*] Checking keys...");
 
     // For this demo, assume a static value for the username
     let key_username: String = "husky".to_string();
