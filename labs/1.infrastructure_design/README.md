@@ -23,6 +23,6 @@ The original source code and license for Sliver are also included in the share. 
 
 This section of the course uses Merlin v1.5.0 for the main demonstration. It also uses an older version (v0.9.0-beta) for the section on PRISM. Please
 
-(v1.5.0)[https://github.com/Ne0nd0g/merlin/releases/download/v1.5.0/]
+[v1.5.0](https://github.com/Ne0nd0g/merlin/releases/download/v1.5.0/)
 
-(v0.9.0-beta and the PRISM utility)[https://github.com/Ne0nd0g/merlin/releases/download/v0.9.0-beta/)
+[v0.9.0-beta and the PRISM utility](https://github.com/Ne0nd0g/merlin/releases/download/v0.9.0-beta/)
