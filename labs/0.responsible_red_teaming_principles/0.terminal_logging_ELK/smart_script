@@ -1,5 +1,8 @@
 # Place into .zshrc
 
+# smart_script will continuously log the input and output of the terminal into a logfile located in ~/Terminal_typescript/raw/
+
+
 smart_script(){
     # if there's no SCRIPT_LOG_FILE exported yet
     if [ -z "$SCRIPT_LOG_FILE" ]; then
@@ -8,29 +11,30 @@ smart_script(){
         logdirraw=raw/$(date +%F)
         logdir=$logdirparent/$logdirraw
         logfile=$logdir/$(date +%F_%T).$$.rawlog
-				txtfile=$logdir/$(date +%F_%T).$$.txt
+                                txtfile=$logdir/$(date +%F_%T).$$.txt
         # if no folder exist - make one
         if [ ! -d $logdir ]; then
             mkdir -p $logdir
         fi
         export SCRIPT_LOG_FILE=$logfile
         export SCRIPT_LOG_PARENT_FOLDER=$logdirparent
-				export TXTFILE=$txtfile
+        export TXTFILE=$txtfile
 
-				# quiet output if no args are passed
+
+        # quiet output if no args are passed
         if [ ! -z "$1" ]; then
             script -f $logfile
-						cat $logfile| perl -pe 's/\e([^\[\]]|\[.*?[a-zA-Z]|\].*?\a)//g' | col -b > $txtfile
+            cat $logfile| perl -pe 's/\\e([^\\[\\]]|\\[.*?[a-zA-Z]|\\].*?\\a)//g' | col -b > $txtfile
         else
             script -f -q $logfile
-						cat $logfile | perl -pe 's/\e([^\[\]]|\[.*?[a-zA-Z]|\].*?\a)//g' | col -b > $txtfile
+            cat $logfile | perl -pe 's/\\e([^\\[\\]]|\\[.*?[a-zA-Z]|\\].*?\\a)//g' | col -b > $txtfile
         fi
-				
         exit
     fi
 }
 # Start logging into new file
 alias startnewlog='unset SCRIPT_LOG_FILE && smart_script -v'
+
 
 # savelog manually saves the current terminal in/out into a logfile: 
 # Example: $ savelog logname
@@ -52,11 +56,16 @@ savelog(){
     txtfile=$manualdir/$logname'.txt'
     rawfile=$manualdir/$logname'.rawlog'
     # make .rawlog readable and save it to .txt file
-    cat $SCRIPT_LOG_FILE | perl -pe 's/\e([^\[\]]|\[.*?[a-zA-Z]|\].*?\a)//g' | col -b > $txtfile
+    cat $SCRIPT_LOG_FILE | perl -pe 's/\\e([^\\[\\]]|\\[.*?[a-zA-Z]|\\].*?\\a)//g' | col -b > $txtfile
     # copy corresponding .rawfile
     cp $SCRIPT_LOG_FILE $rawfile
-    printf '[+] Saved logs:\n    \\\->[*] '$txtfile'\n    \\\->[*] '$rawfile'\n'
+    printf '[+] Saved logs'
+    echo ""
+    printf '  \\\\-> '$txtfile''
+    echo ""
+    printf '  \\\\-> '$rawfile''
 }
+
 
 # Run Smart Script at terminal initialization
 smart_script
